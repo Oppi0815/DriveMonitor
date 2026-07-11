@@ -1,105 +1,48 @@
-<p align="center">
-  <img src="Drivemonitor Logo.png" width="220" alt="DriveMonitor Logo">
-</p>
-# DriveMonitor
+# DriveMonitor 4.5.1 Professional
 
-A modern SMART and temperature monitor for Linux.
-
-DriveMonitor provides a clear overview of storage health and temperatures for
-HDDs, SATA SSDs and NVMe drives. It was developed and tested on Linux Mint.
-
-![DriveMonitor 4.3.2](screenshots/drivemonitor-4.3.2.png)
-
-## Features
-
-- HDD, SSD and NVMe temperature monitoring
-- SMART health overview
-- Important SMART attribute interpretation
-- Drive capacity and filesystem usage
-- Power-on hours and power-cycle count
-- SSD lifetime information where available
-- Temperature history
-- System sensor overview for CPU, GPU, RAM and network devices
-- Session event log
-- Linux desktop notifications for temperature and SMART warnings
-- Automatic startup without repeated password prompts
-- Compact interface positioned on the right side of the screen
-
-## Requirements
-
-DriveMonitor currently targets Linux Mint and similar Debian/Ubuntu-based
-distributions.
-
-Required packages:
-
-```bash
-sudo apt install python3 python3-tk smartmontools lm-sensors libnotify-bin
-```
-
-Run sensor detection if it has not been configured before:
-
-```bash
-sudo sensors-detect
-```
+DriveMonitor zeigt SMART-Zustand, Temperaturen, Belegung und wichtige Laufwerkswerte für HDD, SSD, NVMe und unterstützte USB-Laufwerke unter Linux Mint an.
 
 ## Installation
 
-DriveMonitor is currently distributed as a Python application.
-
-Create the installation directory:
-
 ```bash
-mkdir -p ~/.local/share/drivemonitor
+chmod +x *.sh helpers/drivemonitor-smartctl
+./installieren.sh
 ```
 
-Copy the main program:
+Benötigte Pakete:
 
 ```bash
-cp src/drivemonitor.py ~/.local/share/drivemonitor/
-chmod +x ~/.local/share/drivemonitor/drivemonitor.py
+sudo apt install smartmontools lm-sensors python3-tk
 ```
 
-Start it manually:
+Die grafische Oberfläche läuft als normaler Benutzer. Nur der begrenzte SMART-Helfer wird über Polkit mit erhöhten Rechten ausgeführt.
+
+## Start
+
+Über das Linux-Mint-Menü oder:
 
 ```bash
-pkexec python3 ~/.local/share/drivemonitor/drivemonitor.py
+python3 ~/.local/share/drivemonitor/drivemonitor.py
 ```
 
-## Autostart without a password prompt
-
-The scripts in `scripts/` install a restricted Polkit rule and a protected
-copy of DriveMonitor under `/opt/drivemonitor`.
-
-Run:
+## Prüfung
 
 ```bash
-chmod +x scripts/autostart-einrichten.sh scripts/autostart-entfernen.sh
-./scripts/autostart-einrichten.sh
+./pruefen.sh
 ```
 
-The administrator password is required once during setup. DriveMonitor will
-then start automatically after login without asking for the password again.
+## Hinweise zur finalen Version
 
-To remove the autostart configuration:
+Für die Installation und den Betrieb sollten folgende Punkte geprüft werden:
 
-```bash
-./scripts/autostart-entfernen.sh
-```
+- Über-Dialog und angezeigte Versionsinformationen
+- Laufwerkserkennung und SMART-Werte
+- Berichtserzeugung
+- Einstellungen
+- gespeicherte Fenstergröße und Fensterposition
+- Autostart nach Neuanmeldung
 
-## Temperature thresholds
 
-- Below 50 °C: normal
-- From 50 °C: warning
-- From 60 °C: critical warning
+## Korrektur in 4.5.1
 
-## Current version
-
-**4.3.2**
-
-## License
-
-DriveMonitor is released under the MIT License.
-
-## Author
-
-Horst Oppermann — GitHub: [Oppi0815](https://github.com/Oppi0815)
+Die Systemtemperaturen bleiben auch bei der kleinsten Fenstergröße sichtbar. Auf Systemen ohne separaten GPU-Temperatursensor zeigt die Übersicht beispielsweise `47° / —` an.

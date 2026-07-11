@@ -1,32 +1,36 @@
 # Changelog
 
-All notable changes to DriveMonitor are documented here.
+## 4.5.1 Professional
 
-## [4.3.2] - 2026-07-11
+- CPU-Temperatur wird in der Übersicht auch dann angezeigt, wenn kein eigener GPU-Sensor vorhanden ist.
+- Mindestfensterhöhe auf 680 Pixel angehoben.
+- Unterer Sensorbereich reserviert ausreichend Höhe, damit Temperaturwerte nicht abgeschnitten werden.
+- Bestehende Fensterposition wird weiterhin übernommen; zu kleine gespeicherte Fenstergrößen werden durch die Mindestgröße korrigiert.
 
-### Added
-- Automatic window height adjustment
-- Automatic positioning at the right edge of the screen
-- SMART attribute overview
-- Session event log
-- Desktop notifications for temperature and SMART warnings
-- Autostart support without repeated password prompts
+## 4.5.0 – Professional
 
-### Fixed
-- Corrected interpretation of vendor-specific SMART attribute 188 values
-  on Seagate drives
+- Finale Freigabe auf Basis des erfolgreich getesteten RC2.
+- HDD-, SSD-, NVMe- und unterstützte USB-Laufwerke werden erkannt.
+- SMART-Zustand, Temperaturen, Betriebsstunden und wichtige SMART-Werte werden angezeigt.
+- Laufwerksbelegung, Dateisystem und Einhängepunkt werden dargestellt.
+- HTML-Berichte können gespeichert werden.
+- Aktualisierungsintervall und Desktop-Benachrichtigungen sind einstellbar.
+- Fenstergröße und Fensterposition werden dauerhaft gespeichert.
+- Erweiterter Über-Dialog mit System-, Python-, Tk- und smartctl-Versionen.
+- Oberfläche läuft als normaler Benutzer; nur der begrenzte SMART-Helfer erhält erhöhte Rechte.
+- Installations-, Autostart-, Prüf- und Deinstallationsskripte enthalten.
 
-## [4.2] - 2026-07-11
+## 4.5 Professional RC2
 
-### Added
-- Drive selection on the left
-- Detailed drive information on the right
-- Capacity, firmware, serial number and usage display
-- Temperature history graph
+- Erweiterter Über-Dialog.
+- Herstellerabhängige SMART-Rohwerte kompakter dargestellt.
+- Release-Prüfung erweitert.
 
-## [4.1a] - 2026-07-11
+## 4.5 Professional RC1
 
-### Changed
-- More compact layout
-- Reduced window size
-- Sensors arranged in two columns
+- Fenstergröße und Fensterposition werden gespeichert.
+- Konfigurationsspeicherung robuster gemacht.
+
+## 4.5 Professional Beta 1
+
+- Einstellungen, HTML-Bericht und Über-Dialog ergänzt.

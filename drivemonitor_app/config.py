@@ -1,0 +1,30 @@
+APP_NAME = "DriveMonitor"
+APP_VERSION = "4.5.1 Professional"
+REFRESH_MS = 10_000
+MAX_HISTORY = 60
+TEMP_WARNING = 50
+TEMP_HIGH = 55
+TEMP_CRITICAL = 60
+NOTIFY_COOLDOWN = 300
+
+BG = "#f3f6f8"
+CARD = "#ffffff"
+TEXT = "#1f2937"
+MUTED = "#6b7280"
+BORDER = "#dfe5ea"
+GREEN = "#15803d"
+YELLOW = "#b45309"
+ORANGE = "#c2410c"
+RED = "#b91c1c"
+BLUE = "#2563eb"
+BAR_BG = "#e7ecef"
+SELECTED = "#eaf2ff"
+
+MODEL_ALIASES = {
+    "ST12000NM0127": "Seagate Exos 12 TB",
+    "ST4000DM000-1F2168": "Seagate Desktop HDD 4 TB",
+    "WDC WDS500G2B0A": "WD Blue SSD 500 GB",
+    "WD_BLACK SN850X 8000GB": "WD Black SN850X 8 TB",
+    "WD_BLACK SN850X 2000GB": "WD Black SN850X 2 TB",
+    "SanDisk Ultra 3D NVMe": "SanDisk Ultra 3D NVMe",
+}
