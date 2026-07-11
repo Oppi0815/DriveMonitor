@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="Drivemonitor Logo.png" width="220" alt="DriveMonitor Logo">
+</p>
 # DriveMonitor
 
 A modern SMART and temperature monitor for Linux.
