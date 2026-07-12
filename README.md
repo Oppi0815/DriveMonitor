@@ -8,6 +8,9 @@ Professional SMART and System Monitoring for Linux Mint
 DriveMonitor Professional is a modern monitoring tool for Linux systems.
 It combines SMART health monitoring, system temperature monitoring and
 a clear dashboard in a single application.
+## Screenshot
+
+![DriveMonitor 4.6 Professional](screenshots/drivemonitor-4.6.png)
 
 ---
 
