@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="images/Drivemonitor Logo.png" alt="DriveMonitor Logo" width="180">
+</p>
 # DriveMonitor 4.6 Professional
 
 Professional SMART and System Monitoring for Linux Mint
