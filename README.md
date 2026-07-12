@@ -1,48 +1,53 @@
-# DriveMonitor 4.5.1 Professional
+# DriveMonitor 4.6 Professional
 
-DriveMonitor zeigt SMART-Zustand, Temperaturen, Belegung und wichtige Laufwerkswerte für HDD, SSD, NVMe und unterstützte USB-Laufwerke unter Linux Mint an.
+Professional SMART and System Monitoring for Linux Mint
 
-## Installation
+DriveMonitor Professional is a modern monitoring tool for Linux systems.
+It combines SMART health monitoring, system temperature monitoring and
+a clear dashboard in a single application.
 
-```bash
-chmod +x *.sh helpers/drivemonitor-smartctl
-./installieren.sh
-```
+---
 
-Benötigte Pakete:
+## Features
 
-```bash
-sudo apt install smartmontools lm-sensors python3-tk
-```
+- SMART health monitoring for HDD, SSD and NVMe drives
+- Detailed drive information
+- CPU temperature monitoring
+- GPU temperature monitoring
+- RAM temperature monitoring (where supported)
+- Network and WLAN monitoring
+- Temperature history
+- Event log
+- Professional dashboard
+- Automatic refresh
+- Report generation
+- System maintenance tools
 
-Die grafische Oberfläche läuft als normaler Benutzer. Nur der begrenzte SMART-Helfer wird über Polkit mit erhöhten Rechten ausgeführt.
+---
 
-## Start
+## Current Release
 
-Über das Linux-Mint-Menü oder:
+**DriveMonitor 4.6 Professional**
 
-```bash
-python3 ~/.local/share/drivemonitor/drivemonitor.py
-```
+Latest stable release featuring the new Professional Dashboard.
 
-## Prüfung
+---
 
-```bash
-./pruefen.sh
-```
+## Requirements
 
-## Hinweise zur finalen Version
+- Linux Mint 22.x or newer
+- Python 3
+- smartmontools
+- lm-sensors
 
-Für die Installation und den Betrieb sollten folgende Punkte geprüft werden:
+---
 
-- Über-Dialog und angezeigte Versionsinformationen
-- Laufwerkserkennung und SMART-Werte
-- Berichtserzeugung
-- Einstellungen
-- gespeicherte Fenstergröße und Fensterposition
-- Autostart nach Neuanmeldung
+## Screenshot
 
+*(A screenshot of DriveMonitor 4.6 can be added here.)*
 
-## Korrektur in 4.5.1
+---
 
-Die Systemtemperaturen bleiben auch bei der kleinsten Fenstergröße sichtbar. Auf Systemen ohne separaten GPU-Temperatursensor zeigt die Übersicht beispielsweise `47° / —` an.
+## License
+
+Open Source
