@@ -1,59 +1,92 @@
-<p align="center">
-  <img src="images/Drivemonitor Logo.png" alt="DriveMonitor Logo" width="180">
-</p>
-# DriveMonitor 4.6 Professional
+# DriveMonitor Professional 5.0.0
 
-Professional SMART and System Monitoring for Linux Mint
+DriveMonitor Professional ist ein modularer Gesundheitsmonitor für Laufwerke und Hardware unter Linux Mint. Die Anwendung bewertet SMART-Daten und Temperaturen verständlich, zeigt Veränderungen und Ereignisse an und läuft vollständig als normaler Benutzer.
 
-DriveMonitor Professional is a modern monitoring tool for Linux systems.
-It combines SMART health monitoring, system temperature monitoring and
-a clear dashboard in a single application.
-## Screenshot
+## Highlights
 
-![DriveMonitor 4.6 Professional](screenshots/drivemonitor-4.6.png)
+- HDD-, SSD-, NVMe- und unterstützte USB-Laufwerke
+- sichere SMART-Abfrage ohne Passwortabfrage im laufenden Betrieb
+- übersichtlicher Rechnerzustand mit verständlichen Empfehlungen
+- wichtige SMART-Werte und Trendanalyse
+- Ereigniszentrale für mehrere gleichzeitige Meldungen
+- Temperaturverläufe für Laufwerke und Systemsensoren
+- Erkennung kurzer Temperaturspitzen zwischen Historienpunkten
+- Linux-Mint-Systemupdates und Neustartstatus
+- scrollbare Oberfläche für kleine und große Fenster
+- Diagnose- und Debug-Bericht
+- einmaliger Willkommensdialog
+- Über-Dialog mit System-, Versions- und Lizenzinformationen
 
----
+## Installation
 
-## Features
+```bash
+chmod +x install.sh smart-berechtigung-einrichten.sh uninstall.sh
+./install.sh
+```
 
-- SMART health monitoring for HDD, SSD and NVMe drives
-- Detailed drive information
-- CPU temperature monitoring
-- GPU temperature monitoring
-- RAM temperature monitoring (where supported)
-- Network and WLAN monitoring
-- Temperature history
-- Event log
-- Professional dashboard
-- Automatic refresh
-- Report generation
-- System maintenance tools
+Nur bei der Erstinstallation oder wenn SMART-Daten nicht gelesen werden können:
 
----
+```bash
+./smart-berechtigung-einrichten.sh
+```
 
-## Current Release
+Dieses Skript benötigt einmalig Administratorrechte. DriveMonitor selbst wird anschließend als normaler Benutzer gestartet.
 
-**DriveMonitor 4.6 Professional**
+## Start
 
-Latest stable release featuring the new Professional Dashboard.
+DriveMonitor erscheint im Linux-Mint-Menü als **DriveMonitor Professional**. Alternativ:
 
----
+```bash
+drivemonitor
+```
 
-## Requirements
+## Lokale Daten
 
-- Linux Mint 22.x or newer
-- Python 3
-- smartmontools
-- lm-sensors
+Die Historie und Einstellungen werden ausschließlich lokal gespeichert:
 
----
+```text
+~/.local/share/drivemonitor/history.db
+~/.local/share/drivemonitor/preferences.json
+```
 
-## Screenshot
+DriveMonitor überträgt keine persönlichen Daten ins Internet. Für die Prüfung verfügbarer Systemupdates werden ausschließlich lokale Linux-Mint- beziehungsweise APT-Werkzeuge verwendet.
 
-*(A screenshot of DriveMonitor 4.6 can be added here.)*
+## Voraussetzungen
 
----
+- Linux Mint 22.x oder kompatibles Ubuntu-System
+- Python 3 mit Tkinter
+- `smartmontools`
+- `lm-sensors`
+- `lsblk`
 
-## License
+## Deinstallation
 
-Open Source
+```bash
+./uninstall.sh
+```
+
+Die optionale systemweite SMART-Freigabe kann anschließend, wie vom Deinstallationsskript beschrieben, durch einen Administrator entfernt werden.
+
+## Bedienung
+
+- **Aktualisieren** liest Laufwerke, SMART-Daten, Temperaturen, Sensoren und Systemupdates vollständig neu ein.
+- **Über** zeigt Version, Betriebssystem, Kernel, Python-Version, Lizenz und den GitHub-Link.
+- Die Meldungsleiste öffnet die Ereigniszentrale.
+- Der Debug-Bericht unterstützt Diagnose und Support.
+- Temperaturdiagramme werden mit jeder Messung aussagekräftiger.
+
+## Datenschutz und Sicherheit
+
+- Die grafische Oberfläche läuft nicht als root.
+- Der SMART-Helfer erlaubt ausschließlich lesende `smartctl -a -j`-Aufrufe für zulässige Gerätedateien.
+- Alle Verlaufsdaten bleiben lokal auf dem Rechner.
+
+## Lizenz
+
+GNU General Public License v3. Siehe `LICENSE`.
+
+## Projekt
+
+GitHub: `https://github.com/Oppi0815/DriveMonitor`
+
+Entwickelt für Linux Mint.
